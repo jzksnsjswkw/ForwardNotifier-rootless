@@ -310,6 +310,8 @@ void pushnotif(BOOL override) {
   SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:bundleID];
   if (app != nil) {
     appName = app.displayName;
+  } else {
+    appName = @"";
   }
   if (([title length] != 0) || ([message length] != 0)) {
     if (app != nil && [title length] == 0) {
