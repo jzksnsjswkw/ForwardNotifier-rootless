@@ -12,13 +12,9 @@ A rootless version of [ForwardNotifier](https://github.com/Greg0109/ForwardNotif
 
 ## 如何使用 / How to Use
 
-
-
 https://github.com/jzksnsjswkw/ForwardNotifier-rootless/assets/69855421/1a45c1d9-8665-49ef-846a-69869c3c30bd
 
-
-
-<img src='https://github.com/jzksnsjswkw/ForwardNotifier-rootless/blob/master/docs-assets/iPhone_8109c_IMG_1778.jpg' width='300px'/>
+<img src='https://github.com/jzksnsjswkw/ForwardNotifier-rootless/assets/69855421/a23188b7-b04d-414b-b429-5f95834395c9' width='300px'/>
 
 相较原版，当你在设置中关闭应用的通知权限，则不会转发该应用的推送  
 Compared to the original version, if you disable notification permissions for an app in the settings, its notifications will not be forwarded.
