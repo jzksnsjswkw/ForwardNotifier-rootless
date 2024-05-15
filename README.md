@@ -12,6 +12,8 @@ A rootless version of [ForwardNotifier](https://github.com/Greg0109/ForwardNotif
 
 ## 如何使用 / How to Use
 
+https://github.com/jzksnsjswkw/ForwardNotifier-rootless/assets/69855421/a2bec4e0-2b79-4c81-a465-84b43c994278
+
 <img src='https://github.com/jzksnsjswkw/ForwardNotifier-rootless/blob/master/docs-assets/iPhone_8109c_IMG_1778.jpg' width='300px'/>
 
 相较原版，当你在设置中关闭应用的通知权限，则不会转发该应用的推送  
