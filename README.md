@@ -12,7 +12,11 @@ A rootless version of [ForwardNotifier](https://github.com/Greg0109/ForwardNotif
 
 ## 如何使用 / How to Use
 
-https://github.com/jzksnsjswkw/ForwardNotifier-rootless/assets/69855421/a2bec4e0-2b79-4c81-a465-84b43c994278
+
+
+https://github.com/jzksnsjswkw/ForwardNotifier-rootless/assets/69855421/1a45c1d9-8665-49ef-846a-69869c3c30bd
+
+
 
 <img src='https://github.com/jzksnsjswkw/ForwardNotifier-rootless/blob/master/docs-assets/iPhone_8109c_IMG_1778.jpg' width='300px'/>
 
