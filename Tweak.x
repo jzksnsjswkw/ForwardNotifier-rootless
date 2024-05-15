@@ -198,17 +198,19 @@ void pushnotif(BOOL override) {
   } else if (methodspecifier == 1) { // Crossplatform Server
     // Get Icon data
     SBApplicationIcon *icon = [((SBIconController *)[%c(SBIconController) sharedInstance]).model expectedIconForDisplayIdentifier:bundleID];
-    UIImage *image = nil;
-  	iconspecs.size = CGSizeMake(60, 60);
-  	iconspecs.scale = [UIScreen mainScreen].scale;
-  	iconspecs.continuousCornerRadius = 12;
-  	image = [icon generateIconImageWithInfo:iconspecs];
-    NSData *iconData = UIImagePNGRepresentation(image);
-    NSString *iconBase64;
-    if (![title isEqualToString:@"ForwardNotifier Test"]) {
-      iconBase64 = [iconData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-    } else {
-      iconBase64 = forwardNotifierIconBase64;
+    NSString *iconBase64 = nil;
+    if (icon != nil) {
+      UIImage *image = nil;
+      iconspecs.size = CGSizeMake(60, 60);
+      iconspecs.scale = [UIScreen mainScreen].scale;
+      iconspecs.continuousCornerRadius = 12;
+      image = [icon generateIconImageWithInfo:iconspecs];
+      NSData *iconData = UIImagePNGRepresentation(image);
+      if (![title isEqualToString:@"ForwardNotifier Test"]) {
+        iconBase64 = [iconData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+      } else {
+        iconBase64 = forwardNotifierIconBase64;
+      }
     }
     // Base64 both title and message
     // NSData *titleData = [title dataUsingEncoding: NSUTF8StringEncoding];
@@ -223,7 +225,7 @@ void pushnotif(BOOL override) {
           @"title": title,
           @"subtitle": subtitle,
           @"message": message,
-          @"icon": iconBase64
+          @"icon": iconBase64 ?: @""
         };
         NSError *error;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDictionary options:NSJSONWritingPrettyPrinted error:&error];
@@ -304,11 +306,13 @@ void pushnotif(BOOL override) {
   title = arg1.content.title ?: @"";
   subtitle=arg1.content.subtitle ?: @"";
   message = arg1.content.message ?: @"";
-  
+
   SBApplication *app = [[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:bundleID];
-  appName = app.displayName;
+  if (app != nil) {
+    appName = app.displayName;
+  }
   if (([title length] != 0) || ([message length] != 0)) {
-    if ([title length] == 0) {
+    if (app != nil && [title length] == 0) {
       title = app.displayName;
     }
     if (![title containsString:@"ForwardNotifier"] && [arg1.date timeIntervalSinceNow] > -2) { //This helps avoid the notifications to get forwarded again after a respring, which makes them avoid respring loops. If notifications are 2 seconds old, then won't get forwarded.
