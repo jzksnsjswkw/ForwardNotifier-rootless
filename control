@@ -1,7 +1,7 @@
 Package: com.jzksnsjswkw.forwardnotifier-rootless
 Name: ForwardNotifier-rootless
 Depends: preferenceloader
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
 Description: Forward Notifications to your PC!
 Maintainer: jzksnsjswkw
