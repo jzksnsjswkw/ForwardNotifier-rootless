@@ -3,6 +3,10 @@
 仅实现部分功能的 rootless 版 [ForwardNotifier](https://github.com/Greg0109/ForwardNotifier)  
 A rootless version of [ForwardNotifier](https://github.com/Greg0109/ForwardNotifier) with only partial functionalities implemented.
 
+recommended to use [Pusher-rootless](https://github.com/jzksnsjswkw/Pusher-rootless)  
+建议使用 [Pusher-rootless](https://github.com/jzksnsjswkw/Pusher-rootless)
+
+
 ## 不支持的功能 / Unsupported Features
 
 -   Set Device as Receiver
